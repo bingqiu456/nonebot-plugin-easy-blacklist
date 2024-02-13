@@ -3,8 +3,11 @@ from nonebot.plugin import PluginMetadata
 from nonebot import on_command
 from nonebot.adapters.onebot.v11 import Message,GroupMessageEvent
 from nonebot.params import CommandArg
+from nonebot.message import event_preprocessor
 from nonebot.permission import SUPERUSER
+from nonebot.exception import IgnoredException
 from datetime import datetime
+from nonebot.log import logger
 import time
 from . import api,core,load_data,config,schedule,run_state
 
@@ -24,6 +27,17 @@ core_list = api.core_list
 add_black = on_command("添加黑名单", permission=SUPERUSER)
 search_black = on_command("搜索黑名单", permission=SUPERUSER)
 del_black =on_command("删除黑名单",permission=SUPERUSER)
+
+if config.config.check_global:
+    logger.success("全局检测黑名单开启成功！")
+    @event_preprocessor
+    async def _(event:GroupMessageEvent):
+        if api.search(event.get_user_id())[0]:
+            raise IgnoredException(f"检测到:{event.get_user_id()}属于黑名单")
+        else:
+            pass
+else:
+    logger.warning("全局检测黑名单未开启,开启方法见文档")
 
 
 @add_black.handle()

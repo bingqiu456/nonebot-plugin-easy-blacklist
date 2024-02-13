@@ -4,7 +4,7 @@ import setuptools
 
 setuptools.setup(
 name = "nonebot_plugin_easy_blacklist", 
-version = "1.3", 
+version = "1.4", 
 packages = setuptools.find_packages(),
 author="bingyue", 
 author_email="hello-yiqiu@qq.com", 

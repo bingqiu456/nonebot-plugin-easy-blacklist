@@ -39,6 +39,12 @@ pip install nonebot-plugin-easy-blacklist
 
 > 隔多久保存一次数据，默认为120，也就是120秒
 
+**check_global**
+
+类型:`bool`
+
+> 是否开启全局检测黑名单，默认关闭
+
 ---
 
 ## 指令
@@ -53,7 +59,9 @@ pip install nonebot-plugin-easy-blacklist
 
 ## 规则
 
-> 注:规则功能仅支持onebot11
+> 规则检测仅支持onebot v11
+
+### 功能检测
 
 如果你需要添加一个功能，而这个功能黑名单用户不能用，我们的api模块还提供了`check_hmd`参数，添加方法如下
 
@@ -69,6 +77,10 @@ a = on_command("test")
 a = on_command("test",rule=check_hmd)
 ```
 
+### 全局检测
+
+如果你需要全局检测黑名单用户，只需要添加配置参数，添加一句`check_global=True`即可！
+
 ---
 
 ## 功能性
@@ -81,6 +93,7 @@ a = on_command("test",rule=check_hmd)
 - [x] 批量删除黑名单
 - [x] 快速搜索
 - [x] 开放`API`
+- [x] 全局检测黑名单
 
 ---
 
