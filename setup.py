@@ -1,10 +1,10 @@
-# -*- coding: utf-8 -*-
+﻿# -*- coding: utf-8 -*-
 
 import setuptools
 
 setuptools.setup(
 name = "nonebot_plugin_easy_blacklist", 
-version = "1.4", 
+version = "1.5", 
 packages = setuptools.find_packages(),
 author="bingyue", 
 author_email="hello-yiqiu@qq.com", 

@@ -8,7 +8,6 @@ search_time = 0
 search_time_ = 0
 
 
-
 class blacklist(object):
     """blacklist_system"""
 
@@ -66,14 +65,14 @@ class blacklist(object):
                 else:
                     k = k.x
             i += 1
-        return [k.arg,k.time,k.account,k.ly]
+        return [k.arg, k.time, k.account, k.ly]
 
     def many_add(self, q: List[str]) -> bool:
         """
         批量添加
         """
         for i in q:
-            self.add(i[0],i[1],i[2],i[3])
+            self.add(i[0], i[1], i[2], i[3])
         return True
 
     def many_search(self, q: List[str]) -> List[bool]:
@@ -92,7 +91,7 @@ class blacklist(object):
         """
         k = self
         qq = bin(int(qq))[2:]
-        for j in range(0,len(qq)-1):
+        for j in range(0, len(qq) - 1):
             if qq[j] == "0":
                 k = k.x
             else:
@@ -106,11 +105,11 @@ class blacklist(object):
                 k.y = -1
 
         return True
-    
-    def many_del(self, qq:List[str]) -> List[bool]:
+
+    def many_del(self, qq: List[str]) -> List[bool]:
         """
         批量删除
         """
-        for j in range(0,len(qq)):
+        for j in range(0, len(qq)):
             qq[j] = self.del_black(qq[j])
         return qq
