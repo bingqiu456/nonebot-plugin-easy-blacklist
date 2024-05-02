@@ -1,5 +1,5 @@
 <div align="center">
-  <a href="https://v2.nonebot.dev/store"><img src="https://cdn.bingyue.top/nbp_logo.png" width="180" height="180" alt="NoneBotPluginLogo"></a>
+  <a href="https://v2.nonebot.dev/store"><img src="https://cdn.bingyue.xyz/nbp_logo.png" width="180" height="180" alt="NoneBotPluginLogo"></a>
     <h2>Nonebot-Plugin-easy-blacklist<h2>
     <br></br>
     _✨ 一个轻量级的黑名单插件,支持api接入全平台,内存占用优化中✨_
